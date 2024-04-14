@@ -2,9 +2,10 @@
 	import '../../styles/_main.scss';
 	import { onMount } from 'svelte';
 
-	let theme = 'light';
+	let theme;
 
 	onMount(() => {
+		theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 		updateBodyClass();
 	});
 
