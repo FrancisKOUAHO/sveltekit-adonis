@@ -1,10 +1,13 @@
 @use '../settings/' as *;
 
-body {
-  font-family: 'Metropolis', sans-serif;
-  background-color: $bleu-500;
-  font-size: 16px;
-  line-height: 1.5;
+body.light-theme {
+  background-color: map-get($light-theme, background);
+  color: map-get($light-theme, text-color);
+}
+
+body.dark-theme {
+  background-color: map-get($dark-theme, background);
+  color: map-get($dark-theme, text-color);
 }
 
 h1,
